@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+
+    
+    <title>Document</title>
+</head>
+<body>
+    <header>
+
+    <nav class="navbar fade-in">
+        <div class="navbar-container">
+            <!-- Logo -->
+            <a href="#" class="navbar-logo"><span class="hassan">HASSAN</span>  PORTFOLIO</a>
+
+            <!-- Hamburger Menu (Mobile) -->
+            <div class="navbar-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+
+            <!-- Navbar Links -->
+            <ul class="navbar-menu">
+                <li class="navbar-item">
+                    <a href="Home.html" class="navbar-link" target="_blank" >Home</a>
+                </li>
+                <li class="navbar-item">
+                    <a href="About.html" class="navbar-link">About</a>
+                </li>
+                <li class="navbar-item">
+                    <a href="Service.html" class="navbar-link">Services</a>
+                </li>
+                <li class="navbar-item">
+                    <a href="Education.html" class="navbar-link">Education</a>
+                </li>
+                <li class="navbar-item">
+                    <a href="Contact.html" class="navbar-link" target="_blank" >Contact</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script>
+        // Toggle Mobile Menu
+const mobileMenu = document.getElementById('mobile-menu');
+const navbarMenu = document.querySelector('.navbar-menu');
+
+mobileMenu.addEventListener('click', () => {
+    mobileMenu.classList.toggle('active');
+    navbarMenu.classList.toggle('active');
+}); </script>
+
+
+<main>
+    
+    <section class="firstSection">
+        <div class="leftSection">
+            <div>
+                Hi,My name is <span class="purple">Hassan</span></div>
+                and Iam a Passionate
+                <span id="element"></span>
+            <div class="button-container fade-in">
+                <div class="button-container">
+                    <a href="#" class="animated-button button-1">Developer CV</a>
+                    <a href="Contact.html" class="animated-button button-2" target="_blank" >Contect Me</a>
+                  </div>
+                
+            </div>
+        </div>
+          
+        
+        
+        <div class="rightSection fade-in">
+            <img src="fsw-3-removebg-preview.png" alt="">
+        </div>
+    </section>
+</main>
+<<footer class="footer fade-in">
+    <div class="footer-container">
+        <!-- Footer Column 1: About -->
+        <div class="footer-column">
+            <h3 class="footer-title">About Us</h3>
+            <p class="footer-text">We are a creative team dedicated to building amazing websites and digital experiences.</p>
+            <div class="social-icons">
+                <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.instagram.com/hassan_ahmed_siddiqui_?igsh=Z2R3eXZ1MnM1aWd0" class="social-icon2" target="_blank" ><i class="fab fa-instagram"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+
+        <!-- Footer Column 2: Quick Links -->
+        <div class="footer-column">
+            <h3 class="footer-title">Quick Links</h3>
+            <ul class="footer-links">
+                <li><a href="#" class="footer-link">Home</a></li>
+                <li><a href="#" class="footer-link">About</a></li>
+                <li><a href="#" class="footer-link">Services</a></li>
+                <li><a href="Contact.html" class="footer-link">Contact</a></li>
+            </ul>
+        </div>
+
+        <!-- Footer Column 3: Newsletter -->
+        <div class="footer-column">
+            <h3 class="footer-title">Newsletter</h3>
+            <p class="footer-text">Subscribe to our newsletter to get the latest updates.</p>
+            <form class="newsletter-form">
+                <input type="email" placeholder="Enter your email" required>
+                <button type="submit">Subscribe</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer Bottom -->
+    <div class="footer-bottom">
+        <p>&copy; 2023 Your Company. All rights reserved.</p>
+    </div>
+</footer>
+
+<!-- Font Awesome for Icons -->
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script>
+        var typed = new Typed('#element', {
+           strings: [' Web Developer', 'Web Designer','Developer'],
+           typeSpeed: 100,
+         });
+         
+        
+ </script>
+     <script>
+        document.addEventListener("DOMContentLoaded", function() {
+   const fadeInSections = document.querySelectorAll('.fade-in');
+
+   const observer = new IntersectionObserver((entries) => {
+       entries.forEach(entry => {
+           if (entry.isIntersecting) {
+               entry.target.classList.add('visible');
+           } else {
+               entry.target.classList.remove('visible');
+           }
+       });
+   }, {
+       threshold: 0.1 // Trigger when 10% of the element is visible
+   });
+
+   fadeInSections.forEach(section => {
+       observer.observe(section);
+   });
+});
+
+   </script>
+ 
+</header>
+</body>
+</html>

@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+
+        }
+        body{
+            background-color: navy;
+            color: #ffff;
+            font-family: 'poppins',sans-serif;
+        }
+        .box{
+            color: #04a5f0;
+        }
+        /* nav{
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            height: 50px;
+            background-color: rgb(1, 1,38);
+        } */
+        /* /* nav ul{
+            display: flex;
+            justify-content: center;
+        } */
+        /* nav ul li{
+            list-style: none;
+            margin: 0 13px;
+        } */
+        /* nav ul li a{
+           text-decoration: none;
+            color: #ffff;
+        }
+        nav ul li a:hover{
+            font-size: 1.01rem;
+           
+            color: #ff0000;
+        } */  
+        main hr{
+            border: 0;
+            height: 1.2px;
+            margin: 60px 84px;
+            background-color: #9c97f1;
+        }
+        .left{
+            font-size: 1.5rem;
+
+        }
+        .firstSection{
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin: 80px 0;
+        }
+        .firstSection >div{
+            width: 30%;
+        }
+        .leftSection{
+            font-size: 2.5rem;
+           
+
+        }
+        .rightSection img{
+            width: 80%;
+            margin: 50px 0;
+        }
+        .purple{
+            color: rgb(65, 208, 255);
+
+        }
+        .text-gray{
+            color: gray;
+        }
+        #element{
+            color: rgb(65, 208, 255);
+
+        }
+        .secondSection{
+            max-width: 80vw;
+            margin:auto;
+            height: 80vh;
+        }
+        .secondSection h1{
+            font-size: 1.9rem;
+        }
+        .secondSection .box{
+            background: #ffff;
+            width: 80vw;
+            height: 2px;
+            margin: 56px 0;
+            display: flex;
+        }
+        .secondSection .vertical{
+            max-height: fit-content;
+            width: 1px;
+            background-color: #ffff;
+            margin: 0 6vw;
+        }
+        .image-top{
+            width: 23px;
+            position: relative;
+            top: -32px;
+            left: -9;
+
+        }
+        .vertical-title{
+            position: relative;
+            top: 75px;
+            width: 150px;
+            font-size: 14px;
+        }
+        .vertical-dec{
+            position: relative;
+            top: 86px;
+            color: gray;
+            width: 150px;
+            font-size: 9px;
+        }
+        footer{
+            background-color:#0e0e1a;
+           
+            
+        }
+        .footer{
+            display: flex;
+            padding: 23px 122px;
+            justify-content:space-evenly;
+        }
+        footer ul{
+            list-style: none;
+        }
+        .footer > div{
+            width: 223px;
+        }
+        footer .footer-rights{
+            text-align: center;
+            color: gray;
+            padding: 12px   0;
+        }
+        /* .button-container {
+    text-align: center;
+}
+
+.button-container {
+    text-align: center;
+}
+
+.unique-button {
+    top: 10px;
+    padding: 12px 40px;
+    font-size: 28px;
+    color: white;
+    background:hsl(0, 100%, 48%);
+    border: none;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    outline: none;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.unique-button::before {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    width: 200%;
+    height: 300%;
+    /* background: rgba(98, 20, 255, 0.414); */
+    /* border-radius: 50%;
+    transition: transform 0.5s ease;
+    transform: translate(-50%, -50%) scale(0);
+    z-index: 0;
+}
+
+.unique-button:hover::before {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.unique-button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(6, 222, 255, 0.614);
+}
+
+.unique-button span {
+    position: relative;
+    z-index: 1;
+} */ 
+@media screen and (max-width: 1200px){
+
+.box{
+    flex-direction: column;
+}
+.secondSection .vertical{
+    max-width: 80vh;
+    margin: auto;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.vertical-title, .vertical-dec{
+    left: 45px;
+}
+.secondSection .box{
+    width: 50vw;
+}
+footer{
+    display: none;
+}
+.firstSection{
+    flex-direction:column-reverse;   
+}
+.leftSection{
+    width: 100% !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+.rightSection{
+    width: 720px !important;
+}
+}
+.responsive-button {
+    margin-top: 60px;
+    padding: 15px 50px;
+    font-size: 16px;
+    color: white;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    /* top: 200px; */
+}
+
+.responsive-button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+@media (max-width: 600px) {
+    .responsive-button {
+        padding: 12px 24px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 400px) {
+    .responsive-button {
+        padding: 10px 20px;
+        font-size: 12px;
+    }
+}
+/* .navbar {
+    height: 40px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #236388;
+        padding: 15px 20px;
+    }
+    nav ul li{
+        margin: 0 13px;
+    }
+    
+    .logo {
+        padding: 0px 100px;
+        color: #fff;
+        font-size: 24px;
+    }
+    
+    .nav-list {
+        list-style: none;
+        display: flex;
+    }
+    
+    .nav-item {
+        position: relative;
+    }
+    
+    .nav-item a {
+        text-decoration: none;
+        color: #fff;
+        padding: 10px 15px;
+        transition: color 0.3s ease;
+    }
+    
+    .nav-item a:hover {
+        color: #ff4081; /* Change color on hover */
+
+    
+    /* .nav-item::after {
+        content: '';
+        position: absolute;
+        left: 50%;
+        bottom: -5px;
+        width: 0;
+        height: 2px;
+        background-color: #ff4081;
+        transition: width 0.3s ease, left 0.3s ease;
+    }
+    
+    .nav-item:hover::after {
+        width: 100%;
+        left: 0;
+    }
+    
+    /* Responsive Styles */
+    /* .menu-toggle {
+        display: none;
+        flex-direction: column;
+        cursor: pointer;
+    }
+    
+    .bar {
+        height: 3px;
+        width: 25px;
+        background-color: #fff;
+        margin: 4px 0;
+        transition: 0.3s;
+    }
+    
+    @media (max-width: 1000px) {
+        .nav-list {
+
+            display: none;
+            flex-direction:column-reverse;
+            width: 100%;
+            background-color: #333;
+            position: absolute;
+            top: 60px; Adjust based on navbar height */
+            /* left: 0;
+        }
+    
+        .nav-list.active {
+            display: flex;
+        }
+    
+        .menu-toggle {
+            display: flex;
+        }
+    
+        .navbar {
+            justify-content: space-between;
+        } */
+        /* nav ul li{
+        margin: 0 10px;
+    }
+    }
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #333;
+    padding: 10px 20px;
+    position: relative; */
+/* }
+
+.logo {
+    color: #fff;
+    font-size: 24px;
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin: 0 15px;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    padding: 5px 10px;
+    transition: background 0.3s, color 0.3s;
+}
+
+.nav-links a:hover {
+    background: #fff;
+    color: #333;
+    border-radius: 5px;
+} */
+
+/* .menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.menu-toggle .bar {
+    height: 3px;
+    width: 25px;
+    background: #fff;
+    margin: 3px 0;
+    transition: all 0.3s;
+} */
+
+/* Responsive Styles */
+/* @media (max-width: 768px) {
+    .nav-list {
+        align-items: center;
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background: #0a53a7;
+        width: 30%;
+        border-radius: 0 0 5px 5px;
+        z-index: 1; */
+    
+
+    /* .nav-list.active {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+}  */ 
+.navbar {
+        background: linear-gradient(135deg, #6a11cb, #2575fc);
+        padding: 1rem 2rem;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+    
+    .navbar-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1200px;
+        margin: 0 auto;
+        animation: slideInLeft 0.8s ease-in-out;
+    }
+    
+    .navbar-logo {
+        color: #fff;
+        font-size: 1.5rem;
+        font-weight: bold;
+        text-decoration: none;
+        animation: slideInLeft 0.8s ease-in-out;
+    }
+    
+    .navbar-menu {
+        display: flex;
+        list-style: none;
+        gap: 1.5rem;
+    }
+    
+    .navbar-item {
+        position: relative;
+        display: flex;
+    }
+    
+    .navbar-link {
+        color: #fff;
+        text-decoration: none;
+        font-size: 1rem;
+        transition: color 0.3s ease;
+    }
+    
+    .navbar-link:hover {
+        color: #000203;
+    }
+    
+    /* Hover Effect */
+    .navbar-link::after {
+        content: '';
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: #2f0397;
+        transition: width 0.3s ease;
+    }
+    .navbar-link::before {
+        content: '';
+        position: absolute;
+        top: -5px;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: #2f0397;
+        transition: width 0.3s ease;
+    }
+    .navbar-link:hover::before{
+        width: 100%;
+    }
+    
+    .navbar-link:hover::after{
+        width: 100%;
+    }
+    
+    /* Hamburger Menu (Mobile) */
+    .navbar-toggle {
+        display: none;
+        flex-direction: column;
+        cursor: pointer;
+    }
+    
+    .bar {
+        width: 25px;
+        height: 3px;
+        background: #fff;
+        margin: 4px 0;
+        transition: all 0.3s ease;
+    }
+    @media (max-width: 768px) {
+        .navbar-menu {
+            display: none;
+            position: absolute;
+            top: 70px;
+            /* width: 100% !important; */
+            /* right: 100%; */
+            flex-direction: column;
+            background: linear-gradient(135deg, #6a11cb, #2575fc);
+            width: 90%;
+            padding: 20px;
+            /* right: 20%;
+            left: 20%; */
+            justify-content: center;
+            text-align: center;
+            transition: all 0.5s ease;
+        }
+
+     
+    
+        .navbar-menu.active {
+            display: flex;
+        }
+    
+        .navbar-item {
+            margin: 1rem 0;
+        }
+    
+       
+    .navbar-toggle {
+        display: flex;
+    }
+    
+        .navbar-toggle.active .bar:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+    
+        .navbar-toggle.active .bar:nth-child(2) {
+            opacity: 0;
+        }
+    
+        .navbar-toggle.active .bar:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+    }
+    @keyframes slideInLeft {
+        from {
+            opacity: 0;
+            transform: translateX(-50px);
+        }
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+
+
+    </style>
+</head>
+<body>
+    
+    <header>
+        <nav class="navbar">
+            <div class="navbar-container">
+                <a href="#" class="navbar-logo">My PORTFOLIO</a>
+            <d <div class="navbar-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="navbar-menu">
+                <li class="navbar-item">
+                    <a href="Home.html" class="navbar-link" target="_blank" >Home</a>
+                </li>
+                <li class="navbar-item">
+                    <a href="About.html" class="navbar-link">About</a>
+                </li>
+                <li class="navbar-item">
+                    <a href="Service.html" class="navbar-link">Services</a>
+                </li>
+                <li class="navbar-item">
+                    <a href="Education.html" class="navbar-link">Education</a>
+                </li>
+                <li class="navbar-item">
+                    <a href="Contact.html" class="navbar-link" target="_blank" >Contact</a>
+                </li>
+            </ul>
+          
+        </nav>
+        <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+        <script>
+        // Toggle Mobile Menu
+const mobileMenu = document.getElementById('mobile-menu');
+const navbarMenu = document.querySelector('.navbar-menu');
+
+mobileMenu.addEventListener('click', () => {
+    mobileMenu.classList.toggle('active');
+    navbarMenu.classList.toggle('active');
+});</script>
+        <!-- <script>
+            
+        const mobileMenu = document.getElementById('mobile-menu');
+const navLinks = document.querySelector('.nav-list');
+
+mobileMenu.addEventListener('click', () => {
+    navLinks.classList.toggle('nav-list');
+});
+</script> -->
+    
+        <!-- <nav>
+            <div class="left">Hassan Portfolio</div>
+            <div class="right">
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/">About</a></li>
+                    <li><a href="/">Service</a></li>
+                    <li><a href="/">Project</a></li>
+                    <li><a href="/">contact Me</a></li>
+                </ul>
+            </div>
+        </nav> -->
+    </header>
+    <main>
+        <section class="firstSection">
+            <div class="leftSection">
+                <div>
+                Hi,My name is <span class="purple">Hassan</span></div>
+                and Iam a Passionate
+                <span id="element"></span>
+                <div class="button-container">
+                    
+                    <button class="responsive-button">Click Me!</button>
+                    <button class="responsive-button">Visit Github</button>
+                </div>
+            </div>
+              
+            
+            
+            <div class="rightSection">
+                <img src="fsw-3-removebg-preview.png" alt="">
+            </div>
+        </section>
+        <hr>
+        <section class="secondSection">
+            <span class="text-gray">What I have done so far </span>
+            <h1>Work Experience</h1>
+            <div class="box">
+                <div class="vertical">
+                    <img class="image-top" src="download-removebg-preview.png" alt="">
+                    <div class="vertical-title">
+                       <strong> HTML Developer</strong>
+                    </div>
+                    <div class="vertical-dec">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates illum aliquid optio eligendi, voluptas, animi quas tempore odit maxime alias
+                        
+                    </div>
+                </div>
+                <div class="vertical">
+                    <img class="image-top" src="p1-removebg-preview (1).png" alt="">
+                    <div class="vertical-title">
+                       <strong> css Developer</strong>
+                    </div>
+                    <div class="vertical-dec">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates illum aliquid optio eligendi, voluptas, animi quas tempore odit maxime alias
+                        
+                    </div>
+                </div>
+                <div class="vertical">
+                    <img class="image-top" src="facebook-icon-preview-1-removebg-preview.png" alt="">
+                    <div class="vertical-title">
+                       <strong> JAVA Script Developer</strong>
+                    </div>
+                    <div class="vertical-dec">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates illum aliquid optio eligendi, voluptas, animi quas tempore odit maxime alias
+                        
+                    </div>
+                </div>
+                <div class="vertical">
+                    <img class="image-top" src="download__1_-removebg-preview (1).png" alt="">
+                    <div class="vertical-title">
+                       <strong> Jquery Developer</strong>
+                    </div>
+                    
+                </div>
+                <div class="vertical">
+                    <img class="image-top" src="p1-removebg-preview (1).png" alt="">
+                    <div class="vertical-title">
+                       <strong> css Developer</strong>
+                    </div>
+                  
+                </div>
+                <div class="vertical">
+                    <img class="image-top" src="p1-removebg-preview (1).png" alt="">
+                    <div class="vertical-title">
+                       <strong> css Developer</strong>
+                    </div>
+                   
+                </div>
+                
+                
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="footer">
+            <div class="footer-first">
+                <h3>Hassan Developer Portfolio</h3>
+            </div>
+            <div class="footer-second">
+                <ul>
+                    <li>Home</li>
+                    <li>About</li>
+                    <li>Service</li>
+                    <li>contact</li>
+                </ul>
+            </div>
+            <div class="footer-third">
+                <ul>
+                    <li>Home</li>
+                    <li>About</li>
+                    <li>Service</li>
+                    <li>contact</li>
+                </ul>
+            </div>
+            <div class="footer-fourth">
+                <ul>
+                    <li>Home</li>
+                    <li>About</li>
+                    <li>Service</li>
+                    <li>contact</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-rights">
+            Copyright &#169; HassanPortfoli.com | All right reserved
+        </div>
+    </footer>
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script>
+        var typed = new Typed('#element', {
+          strings: ['Web Developer', 'Web Designer','Developer'],
+          typeSpeed: 100,
+        });
+      </script>
+</body>
+</html>

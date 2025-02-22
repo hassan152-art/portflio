@@ -1,0 +1,259 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unique Contact Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <style>/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    background:#116f94;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    color: #fff;
+    
+}
+/* .hero{
+    position: absolute;
+    z-index: -1;
+    bottom: 0;
+    right: 0; */
+
+.form-wrapper {
+    width: 600px;
+    /* justify-content: center;
+    text-align: center;
+    align-items: center; */
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    border-radius: 80px;
+    padding: 2rem;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    animation: fadeIn 1s ease-in-out;
+}
+
+.form-container {
+    max-width: 600px;
+    width: 100%;
+}
+
+.form-title {
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+    animation: slideDown 0.8s ease-in-out;
+}
+
+.form-subtitle {
+    text-align: center;
+    font-size: 1rem;
+    margin-bottom: 2rem;
+    color: rgba(255, 255, 255, 0.8);
+    animation: slideUp 0.8s ease-in-out;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.input-group {
+    position: relative;
+    margin-bottom: 1.5rem;
+
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    font-size: 1rem;
+    color: #fff;
+    transition: all 0.3s ease;
+}
+
+input:focus, textarea:focus {
+    border-color: #ff6f61;
+    outline: none;
+}
+
+label {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.7);
+    transition: all 0.3s ease;
+    pointer-events: none;
+}
+
+input:focus ~ label, textarea:focus ~ label,
+input:not(:placeholder-shown) ~ label, textarea:not(:placeholder-shown) ~ label {
+    top: -10px;
+    left: 5px;
+    font-size: 0.8rem;
+    color: #ff6f61;
+}
+
+.input-highlight {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #ff6f61;
+    transition: width 0.3s ease;
+}
+
+input:focus ~ .input-highlight, textarea:focus ~ .input-highlight {
+    width: 100%;
+}
+
+.submit-btn {
+    background: #df1300;
+    color: #fff;
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.submit-btn:hover {
+    background: #d81386;
+    
+    transition-duration: 0.5s;
+    transform: translateY(-4px);
+    
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 280px) {
+    .form-wrapper {
+        padding: 1rem;
+    }
+
+    .form-title {
+        font-size: 1.5rem;
+    }
+
+    .form-subtitle {
+        font-size: 0.9rem;
+    }
+
+    input, textarea {
+        font-size: 0.9rem;
+    }
+
+    label {
+        font-size: 0.9rem;
+    }
+
+    .submit-btn {
+        font-size: 0.9rem;
+    }
+}</style>
+
+    <div class="form-wrapper">
+        <!-- <div class="hero">
+            <video autoplay loop muted plays-inline>
+              <source src="Plexus.mp4" type="video/mp4" >
+          </video>
+    </div> -->
+        <div class="form-container">
+            <h2 class="form-title">Get in Touch</h2>
+            <p class="form-subtitle">We'd love to hear from you!</p>
+            <form class="contact-form">
+                <div class="input-group">
+                    <input type="text" id="name" required>
+                    <label for="name">Your Name</label>
+                    <span class="input-highlight"></span>
+                </div>
+                <div class="input-group">
+                    <input type="email" id="email" required>
+                    <label for="email">Your Email</label>
+                    <span class="input-highlight"></span>
+                </div>
+                <div class="input-group">
+                    <textarea id="message" rows="4" required></textarea>
+                    <label for="message">Your Message</label>
+                    <span class="input-highlight"></span>
+                </div>
+                <button type="submit" class="submit-btn">Send Message</button>
+            </form>
+        </div>
+    </div>
+    <script>// Optional: Add form submission handling
+        document.querySelector('.contact-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            alert('Thank you for your message! We will get back to you soon.');
+            // You can add AJAX or fetch() here to handle form submission
+        });</script>
+           <script>
+            document.addEventListener("DOMContentLoaded", function() {
+const fadeInSections = document.querySelectorAll('.fade-in');
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+        } else {
+            entry.target.classList.remove('visible');
+        }
+    });
+}, {
+    threshold: 0.1 // Trigger when 10% of the element is visible
+});
+
+fadeInSections.forEach(section => {
+    observer.observe(section);
+});
+});
+</script>
+</body>
+</html>
